@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="header" style="margin-bottom: 30px;"> Hello, <span id="currentUser">Guest</span>! </div>
+
+        <!-- Left Column -->
+        <div id="leftPane">
+
+            <!-- Users List Screen -->
+            <div id="usersListScreen" class="screenSection">
+                <h2>Users Detail</h2>
+                <p>We've Following users available in our list:</p>
+                <div id="detailsList"></div>
+            </div>
+
+            <!-- Add User Screen -->
+            <div id="addUserScreen" class="screenSection">
+                <h2>Add User</h2>
+                <form onSubmit="return addUser();">
+                    <p><input type="text" name="username" id="username" placeholder="Your Name" /></p>
+                    <p><input type="email" name="email" id="email" placeholder="Your Email" /></p>
+                    <p><input type="password" name="password" id="password" placeholder="Enter your password" /></p>
+                    <p><input type="submit" value="Add User"></p>
+                </form>
+            </div>
+
+            <!-- Delete User Screen -->
+            <div id="deleteUserScreen" class="screenSection">
+                <h2>Delete User</h2>
+                <form onSubmit="return deleteUser()">
+                    <p><input type="email" name="deleteEmailField" id="deleteEmailField" placeholder="Enter user email" required /></p>
+                    <p><input type="submit" value="Delete User"></p>
+                </form>
+            </div>
+
+            <!-- Login User Screen -->
+            <div id="loginUserScreen" class="screenSection">
+                <h2>Login</h2>
+                <form onSubmit="return loginUser()">
+                    <p><input type="email" name="loginEmailField" id="loginEmailField" placeholder="Your Email" /></p>
+                    <p><input type="password" name="loginPasswordField" id="loginPasswordField" placeholder="Enter your password" /></p>
+                    <p><input type="submit" value="Login"></p>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Right Column - Buttons -->
+        <div id="rightPane">
+            <button id="generateUsersListButton" onClick="generateUsersList()">Generate Users List</button>
+            <button id="addUserButton" onClick="switchToScreen('addUserScreen')">Add User</button>
+            <button id="deleteUserButton" onClick="switchToScreen('deleteUserScreen')">Delete User</button>
+            <hr>
+            <button id="loginUserButton" onClick="switchToScreen('loginUserScreen')">Login</button>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
